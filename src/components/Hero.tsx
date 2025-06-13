@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -29,7 +29,7 @@ export default function Hero() {
   const y = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
   
   // Estado para popup
-  const [showPopup, setShowPopup] = useState(false);
+  // const [showPopup, setShowPopup] = useState(false);
   
   // Adiciona classe para contador regressivo
   const [timeLeft, setTimeLeft] = useState({
@@ -63,13 +63,13 @@ export default function Hero() {
     const timer = setInterval(calculateTimeLeft, 1000);
     
     // Mostrar popup após 7 segundos
-    const popupTimer = setTimeout(() => {
-      setShowPopup(true);
-    }, 7000);
+    // const popupTimer = setTimeout(() => {
+    //   setShowPopup(true);
+    // }, 7000);
     
     return () => {
       clearInterval(timer);
-      clearTimeout(popupTimer);
+      // clearTimeout(popupTimer);
     };
   }, []);
 
@@ -243,7 +243,7 @@ export default function Hero() {
       </motion.div>
       
       {/* Popup flutuante para conversão */}
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {showPopup && (
           <motion.div
             initial={{ opacity: 0, y: 50, x: "-50%" }}
@@ -281,7 +281,7 @@ export default function Hero() {
             </div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
     </section>
   );
 }

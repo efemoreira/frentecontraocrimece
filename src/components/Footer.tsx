@@ -45,32 +45,33 @@ export default function Footer() {
           </motion.div>
           
           {/* Coluna 2 - Links Rápidos */}
-          <motion.div
+            <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-          >
-            <h4 className="text-xl font-bold mb-4">Links Rápidos</h4>
+            className="flex flex-col items-center"
+            >
+            <h4 className="text-xl font-bold mb-4 text-center">Links Rápidos</h4>
             <ul className="space-y-2">
               {[
-                { name: "Sobre o Evento", url: "#evento" },
-                { name: "Personalidades", url: "#presencas" },
-                { name: "Inscrição", url: "#inscricao" },
-                { name: "Denúncia", url: "#denuncia" },
-                { name: "Política de Privacidade", url: "#" }
+              { name: "Sobre o Evento", url: "#evento" },
+              { name: "Personalidades", url: "#presencas" },
+              { name: "Inscrição", url: "#inscricao" },
+              { name: "Denúncia", url: "#denuncia" },
+              { name: "Política de Privacidade", url: "#" }
               ].map((link, i) => (
-                <li key={i}>
-                  <a 
-                    href={link.url} 
-                    className="text-gray-300 hover:text-white hover:underline transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                </li>
+              <li key={i} className="text-center">
+                <a 
+                href={link.url} 
+                className="text-gray-300 hover:text-white hover:underline transition-colors"
+                >
+                {link.name}
+                </a>
+              </li>
               ))}
             </ul>
-          </motion.div>
+            </motion.div>
           
           {/* Coluna 3 - Contato */}
           {/* <motion.div
