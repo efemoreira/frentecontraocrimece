@@ -94,6 +94,7 @@ export default function LeadForm({ hideTitle, altTitle, altSubtitle }: LeadFormP
     try {
       // Endpoint do Google Script para processar o formulário
       const response = await fetch('https://script.google.com/macros/s/AKfycbx2w1PI7v4ZXn8d-hdYqAvE8UpbJGtgZdPC01q9_PQJbAWxD0IACNfIABmU9GJM--1T/exec', {
+        redirect: "follow",
         method: 'POST',
         body: JSON.stringify({
           nome: form.nome,
@@ -103,9 +104,7 @@ export default function LeadForm({ hideTitle, altTitle, altSubtitle }: LeadFormP
           dataInscricao: new Date().toISOString(),
           origem: 'site_lancamento'
         }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
+        headers: {  'Content-Type': 'text/plain;charset=utf-8' },
       });
       
       if (response.ok) {

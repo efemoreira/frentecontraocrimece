@@ -20,6 +20,7 @@ export default function DenunciationForm() {
     try {
       // Endpoint do Google Script para processar denúncias (anonimamente)
       const response = await fetch('https://script.google.com/macros/s/AKfycbx2w1PI7v4ZXn8d-hdYqAvE8UpbJGtgZdPC01q9_PQJbAWxD0IACNfIABmU9GJM--1T/exec', {
+        redirect: "follow",
         method: 'POST',
         body: JSON.stringify({
           descricao: form.descricao,
@@ -27,9 +28,7 @@ export default function DenunciationForm() {
           contato: form.anonima ? 'Anônima' : form.contato,
           dataEnvio: new Date().toISOString()
         }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
+        headers: {  'Content-Type': 'text/plain;charset=utf-8' },
       });
       
       if (response.ok) {
