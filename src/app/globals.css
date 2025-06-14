@@ -59,6 +59,12 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #C41F1F;
 }
 
+/* Classe para corrigir a sobreposição de seções */
+.section {
+  position: relative;
+  padding: 3rem 0;
+}
+
 .section {
   padding-top: 4rem;
   padding-bottom: 4rem;

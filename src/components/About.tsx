@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const tabs = [
   {
@@ -27,65 +28,66 @@ const tabs = [
 
 export default function About() {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
 
   return (
     <section id="sobre" className="relative overflow-hidden py-20 md:py-32">
-      {/* Background Parallax */}
+      {/* Background Fixo */}
       <div className="absolute inset-0 w-full h-full z-0">
-        <motion.div 
-          className="absolute inset-0 w-full h-full"
-          style={{ y }}
-        >
-          <div className="w-full h-full bg-gradient-to-b from-gray-900 to-[#0E3B6E] opacity-90" />
-          {/* This would be an Image in the final implementation */}
-          {/* <Image 
+        <div className="absolute inset-0 w-full h-full">
+          <Image 
             src="/images/about-bg.jpg" 
             alt="Assembleia Legislativa do Ceará" 
             fill 
+            priority
             className="object-cover"
-          /> */}
-        </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0E3B6E]/90 to-transparent" />
+          />
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-gray-900/90 to-[#0E3B6E]/90" />
+        </div>
       </div>
       
-      <div className="container relative z-10">
+      <div className="container relative z-10 px-4 sm:px-6 md:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center text-white mb-12"
+          className="text-center text-white mb-8 md:mb-12"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Audiência Pública na ALECE</h2>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 md:mb-4">Audiência Pública na ALECE</h2>
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto px-4">
             Juntos pela segurança e contra o crime organizado no Ceará
           </p>
         </motion.div>
         
-        <div className="grid md:grid-cols-5 gap-8 max-w-5xl mx-auto">
+        <div className="flex flex-col md:grid md:grid-cols-5 gap-4 md:gap-8 max-w-5xl mx-auto">
           {/* Tabs Navigation */}
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="md:col-span-2 bg-white/10 backdrop-blur-sm rounded-lg p-2 md:p-4"
+            className="md:col-span-2 bg-white/10 backdrop-blur-sm rounded-lg p-3 md:p-4"
           >
-            <div className="flex flex-row md:flex-col space-x-2 md:space-x-0 md:space-y-2 overflow-x-auto md:overflow-visible">
-              {tabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`flex-1 py-3 px-4 rounded-md text-left transition-all duration-200 md:text-lg ${
-                    activeTab === tab.id 
-                      ? 'bg-secondary text-white font-medium' 
-                      : 'text-white/80 hover:bg-white/20'
-                  }`}
-                >
-                  {tab.label}
-                </button>
+            <div className="grid grid-cols-2 md:grid-cols-1 gap-2 md:gap-0">
+              {tabs.map((tab, index) => (
+                <React.Fragment key={tab.id}>
+                  <button
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`relative py-3 px-4 rounded-md text-center md:text-left transition-all duration-200 text-sm md:text-lg ${
+                      activeTab === tab.id 
+                        ? 'bg-white/20 text-white font-medium' 
+                        : 'text-white/80 hover:bg-white/20'
+                    }`}
+                  >
+                    {tab.label}
+                    {activeTab === tab.id && (
+                      <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-1/2 bg-secondary rounded-r-full"></span>
+                    )}
+                  </button>
+                  {index < tabs.length - 1 && (
+                    <div className="hidden md:block h-px bg-white/20 my-2 mx-3"></div>
+                  )}
+                </React.Fragment>
               ))}
             </div>
           </motion.div>
@@ -96,7 +98,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="md:col-span-3 bg-white rounded-lg shadow-xl p-6 md:p-8"
+            className="md:col-span-3 bg-white rounded-lg shadow-xl p-5 md:p-8"
           >
             {tabs.map(tab => (
               <div 
@@ -108,7 +110,7 @@ export default function About() {
                   {tab.content}
                 </p>
                 
-                <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div className="mt-6 md:mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <div>
                     <span className="block text-gray-500 text-sm">Data e Hora:</span>
                     <span className="font-medium text-gray-800">08 de Agosto de 2025, 10h às 17h</span>
@@ -118,7 +120,7 @@ export default function About() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     href="#inscricao"
-                    className="btn btn-primary inline-block"
+                    className="btn btn-primary inline-block text-center py-3 px-6"
                   >
                     Quero Participar
                   </motion.a>

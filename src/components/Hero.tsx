@@ -74,7 +74,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="evento" className="relative h-screen min-h-[650px] flex items-center justify-center overflow-hidden">
+    <section id="evento" className="relative h-screen min-h-[800px] sm:min-h-[850px] flex items-center justify-center overflow-hidden pt-20 md:pt-24 pb-20 md:pb-24">
       {/* Background Slider */}
       <div className="absolute inset-0 z-0">
         <Swiper
@@ -104,7 +104,7 @@ export default function Hero() {
       </div>
       
       {/* Content */}
-      <div className="container relative z-10 pt-24 text-center">
+      <div className="container relative z-10 pt-16 md:pt-24 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -211,7 +211,7 @@ export default function Hero() {
           
           {/* Elemento de social proof */}
           <motion.div 
-            className="mt-10 flex items-center justify-center text-white/80 text-sm"
+            className="mt-10 mb-8 flex items-center justify-center text-white/80 text-sm"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3 }}
@@ -228,7 +228,7 @@ export default function Hero() {
       
       {/* Scroll indicator */}
       <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
         animate={{ 
           y: [0, 10, 0],
         }}

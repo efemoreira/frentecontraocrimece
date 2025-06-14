@@ -16,7 +16,7 @@ export default function Header() {
 
   return (
     <motion.header 
-      className={`fixed top-0 left-0 w-full z-50 py-4 transition-all duration-300 ${scrolled ? 'bg-[#0E3B6E] shadow-lg py-3' : 'bg-transparent'}`}
+      className={`fixed top-0 left-0 w-full z-50 py-2 md:py-4 transition-all duration-300 ${scrolled ? 'bg-[#0E3B6E] shadow-lg py-2 md:py-3' : 'bg-transparent/70 backdrop-blur-sm'}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: 'spring', stiffness: 100 }}
@@ -99,14 +99,14 @@ export default function Header() {
       <AnimatePresence>
         {isOpen && (
           <motion.div 
-            className="md:hidden absolute top-full left-0 w-full bg-[#0E3B6E] shadow-xl"
+            className="md:hidden fixed top-[60px] left-0 w-full bg-[#0E3B6E]/95 backdrop-blur-sm shadow-xl z-50"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
           >
             <div className="container py-4 flex flex-col">
-              {['Evento', 'Presenças', 'Sobre', 'Denúncia'].map((item, i) => (
+              {['Evento', 'Presenças', 'Sobre', 'Denúncia', 'FAQ'].map((item, i) => (
                 <motion.a
                   key={item}
                   href={`#${item.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')}`}
