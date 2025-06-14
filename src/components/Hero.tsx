@@ -74,7 +74,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="evento" className="relative h-auto min-h-screen md:h-screen flex items-center justify-center overflow-y-auto overflow-x-hidden pt-20 pb-16 md:pt-16 md:pb-24">
+    <section id="evento" className="relative h-auto min-h-screen md:h-screen flex items-center justify-center overflow-y-auto overflow-x-hidden pt-20 pb-16 md:pt-16 md:pb-24 bg-white">
       {/* Background Slider */}
       <div className="absolute inset-0 z-0">
         <Swiper
@@ -94,9 +94,9 @@ export default function Hero() {
           {slideImages.map((slide, index) => (
             <SwiperSlide key={index} className="h-full w-full">
               <div className="relative h-full w-full">
-                {/* Placeholder para imagem - você precisará criar estas imagens na pasta public/images */}
-                <div className="absolute inset-0 bg-[#0F1B33]"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0E3B6E]/90 to-transparent"></div>
+                {/* Imagem de fundo escurecida para contraste */}
+                <div className="absolute inset-0 bg-yellow-100"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-yellow-400/80 to-transparent"></div>
               </div>
             </SwiperSlide>
           ))}
@@ -110,10 +110,10 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           style={{ opacity }}
-          className="text-white max-w-4xl mx-auto px-4"
+          className="text-black max-w-4xl mx-auto px-4"
         >
           <motion.div
-            className="inline-block bg-secondary text-white px-3 py-1 md:px-4 md:py-2 rounded-full mb-4 md:mb-6 shadow-lg text-xs md:text-base"
+            className="inline-block bg-yellow-400 text-black px-3 py-1 md:px-4 md:py-2 rounded-full mb-4 md:mb-6 shadow-lg text-xs md:text-base font-bold"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3 }}
@@ -128,12 +128,12 @@ export default function Hero() {
             transition={{ delay: 0.5 }}
           >
             Audiência Pública<br />
-            <span className="text-secondary">Frente Contra o Crime</span> no Ceará
+            <span className="text-yellow-500">Frente Contra o Crime</span> no Ceará
           </motion.h1>
           
-          <motion.div className="bg-white/10 backdrop-blur-sm p-3 md:p-4 rounded-lg max-w-3xl mx-auto mb-4 md:mb-8 border border-white/20">
+          <motion.div className="bg-yellow-50/80 backdrop-blur-sm p-3 md:p-4 rounded-lg max-w-3xl mx-auto mb-4 md:mb-8 border border-yellow-200">
             <motion.p
-              className="text-sm sm:text-base md:text-xl text-gray-100 max-w-2xl mx-auto"
+              className="text-sm sm:text-base md:text-xl text-yellow-900 max-w-2xl mx-auto"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
@@ -142,25 +142,19 @@ export default function Hero() {
               civil e autoridades nesta importante audiência.
             </motion.p>
             
-            <div className="mt-3 md:mt-4 text-gray-200 flex flex-wrap justify-center gap-x-4 md:gap-x-8 gap-y-2">
+            <div className="mt-3 md:mt-4 text-yellow-800 flex flex-wrap justify-center gap-x-4 md:gap-x-8 gap-y-2">
               <div className="flex items-center">
-                <svg className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                 </svg>
                 <span className="text-xs sm:text-sm md:text-base">10h da manhã</span>
               </div>
               <div className="flex items-center">
-                <svg className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
                 <span className="text-xs sm:text-sm md:text-base">Assembleia Legislativa do Ceará</span>
               </div>
-              {/* <div className="flex items-center">
-                <svg className="w-5 h-5 mr-2 text-secondary" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                </svg>
-                <span>6 autoridades confirmadas</span>
-              </div> */}
             </div>
           </motion.div>
           
@@ -177,9 +171,9 @@ export default function Hero() {
               { label: "MINUTOS", value: timeLeft.minutes },
               { label: "SEGUNDOS", value: timeLeft.seconds }
             ].map((item, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-sm p-2 sm:p-3 md:p-4 rounded-lg">
-                <div className="text-xl sm:text-2xl md:text-4xl font-bold text-white">{item.value}</div>
-                <div className="text-gray-300 text-xs sm:text-sm">{item.label}</div>
+              <div key={index} className="bg-yellow-100/80 backdrop-blur-sm p-2 sm:p-3 md:p-4 rounded-lg">
+                <div className="text-xl sm:text-2xl md:text-4xl font-bold text-yellow-900">{item.value}</div>
+                <div className="text-yellow-700 text-xs sm:text-sm">{item.label}</div>
               </div>
             ))}
           </motion.div>
@@ -192,7 +186,7 @@ export default function Hero() {
           >
             <motion.a 
               href="#inscricao" 
-              className="btn btn-secondary text-sm sm:text-base md:text-lg font-bold py-3 md:py-4 px-4 md:px-8 shadow-lg relative overflow-hidden group"
+              className="btn btn-secondary text-sm sm:text-base md:text-lg font-bold py-3 md:py-4 px-4 md:px-8 shadow-lg relative overflow-hidden group bg-yellow-400 text-black border-none hover:bg-yellow-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -201,7 +195,7 @@ export default function Hero() {
             </motion.a>
             <motion.a 
               href="#presencas" 
-              className="btn border-2 border-white text-white hover:bg-white/10 py-2 sm:py-3 md:py-4 px-4 md:px-6 text-sm sm:text-base"
+              className="btn border-2 border-yellow-400 text-yellow-900 hover:bg-yellow-100 py-2 sm:py-3 md:py-4 px-4 md:px-6 text-sm sm:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -211,14 +205,14 @@ export default function Hero() {
           
           {/* Elemento de social proof */}
           <motion.div 
-            className="mt-4 sm:mt-6 md:mt-10 mb-4 md:mb-8 flex items-center justify-center text-white/80 text-xs sm:text-sm"
+            className="mt-4 sm:mt-6 md:mt-10 mb-4 md:mb-8 flex items-center justify-center text-yellow-900/80 text-xs sm:text-sm"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3 }}
           >
             <div className="flex -space-x-1 sm:-space-x-2 mr-2 sm:mr-3">
               {[1, 2, 3, 4].map((i) => (
-                <div key={i} className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full border-2 border-primary bg-gray-300`}></div>
+                <div key={i} className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full border-2 border-yellow-400 bg-yellow-100`}></div>
               ))}
             </div>
             <span>+120 pessoas já confirmaram presença</span>
@@ -238,7 +232,7 @@ export default function Hero() {
         }}
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M7 10L12 15L17 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M7 10L12 15L17 10" stroke="#111" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </motion.div>
       

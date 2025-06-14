@@ -2,10 +2,12 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #0E3B6E;
+  --color-primary: #febc0e;
   --color-secondary: #E22D2D;
   --background: #ffffff;
   --foreground: #171717;
+  /* amarelo */
+  --color-yellow: #FBBF24;
 }
 
 html {
@@ -47,7 +49,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-  background-color: #092950;
+  background-color: #f0b909;
 }
 
 .btn-secondary {

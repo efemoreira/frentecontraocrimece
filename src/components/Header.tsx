@@ -17,7 +17,7 @@ export default function Header() {
 
   return (
     <motion.header 
-      className={`fixed top-0 left-0 w-full z-50 py-2 md:py-4 transition-all duration-300 ${scrolled ? 'bg-[#0E3B6E] shadow-lg py-2 md:py-3' : 'bg-transparent/70 backdrop-blur-sm'}`}
+      className={`fixed top-0 left-0 w-full z-50 py-2 md:py-4 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg py-2 md:py-3' : 'bg-white/80 backdrop-blur-sm'}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: 'spring', stiffness: 100 }}
@@ -49,8 +49,8 @@ export default function Header() {
           {['Presenças', 'Sobre', 'Denúncia', 'FAQ'].map((item, i) => (
             <motion.a
               key={item}
-              href={`#${item.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')}`}
-              className="text-white hover:text-secondary transition-colors font-medium"
+              href={`#${item.toLowerCase().normalize('NFD').replace(/[^\w]/g, '')}`}
+              className="text-black hover:text-yellow-600 transition-colors font-medium"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 + i * 0.1 }}
@@ -62,7 +62,7 @@ export default function Header() {
           ))}
           <motion.a
             href="#inscricao"
-            className="btn btn-secondary ml-4"
+            className="btn btn-secondary ml-4 bg-yellow-400 text-black border-none hover:bg-yellow-300"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
@@ -77,7 +77,7 @@ export default function Header() {
         <div className="md:hidden">
           <button 
             onClick={() => setIsOpen(!isOpen)}
-            className="text-white focus:outline-none"
+            className="text-black focus:outline-none"
             aria-label="Menu"
           >
             <svg 
@@ -101,7 +101,7 @@ export default function Header() {
       <AnimatePresence>
         {isOpen && (
           <motion.div 
-            className="md:hidden fixed top-[60px] left-0 w-full bg-[#0E3B6E]/95 backdrop-blur-sm shadow-xl z-50"
+            className="md:hidden fixed top-[60px] left-0 w-full bg-white/95 backdrop-blur-sm shadow-xl z-50"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -111,8 +111,8 @@ export default function Header() {
               {['Evento', 'Presenças', 'Sobre', 'Denúncia', 'FAQ'].map((item, i) => (
                 <motion.a
                   key={item}
-                  href={`#${item.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')}`}
-                  className="text-white py-3 border-b border-blue-700 hover:bg-blue-800 transition-colors"
+                  href={`#${item.toLowerCase().normalize('NFD').replace(/[^\w]/g, '')}`}
+                  className="text-black py-3 border-b border-yellow-200 hover:bg-yellow-100 transition-colors"
                   onClick={() => setIsOpen(false)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -123,7 +123,7 @@ export default function Header() {
               ))}
               <motion.a
                 href="#inscricao"
-                className="btn btn-secondary mt-4 text-center"
+                className="btn btn-secondary mt-4 text-center bg-yellow-400 text-black border-none hover:bg-yellow-300"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}

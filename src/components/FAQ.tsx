@@ -38,7 +38,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="section bg-gray-50">
+    <section id="faq" className="section bg-white">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -47,8 +47,8 @@ export default function FAQ() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="section-title text-primary">Perguntas Frequentes</h2>
-          <p className="section-subtitle">
+          <h2 className="section-title text-yellow-600">Perguntas Frequentes</h2>
+          <p className="section-subtitle text-black">
             Tire suas dúvidas sobre o evento e a iniciativa Frente Contra o Crime CE
           </p>
         </motion.div>
@@ -58,7 +58,7 @@ export default function FAQ() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
-          className="max-w-3xl mx-auto divide-y divide-gray-200"
+          className="max-w-3xl mx-auto divide-y divide-yellow-100"
         >
           {faqItems.map((item, i) => (
             <div key={i} className="py-4">
@@ -66,7 +66,7 @@ export default function FAQ() {
                 onClick={() => toggleItem(i)}
                 className="flex justify-between items-center w-full text-left focus:outline-none"
               >
-                <span className="text-lg font-medium text-gray-900">{item.question}</span>
+                <span className="text-lg font-medium text-black">{item.question}</span>
                 <span className="ml-6 flex-shrink-0">
                   <svg
                     className={`w-6 h-6 transform transition-transform duration-300 ${
@@ -95,7 +95,7 @@ export default function FAQ() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <p className="mt-4 text-base text-gray-600">{item.answer}</p>
+                    <p className="mt-4 text-base text-yellow-900">{item.answer}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -110,12 +110,12 @@ export default function FAQ() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <p className="mb-6 text-gray-600">
+          <p className="mb-6 text-yellow-900">
             Não encontrou o que procurava? Entre em contato conosco
           </p>
           <a 
             href="mailto:contato@frentecontraocrimece.org.br" 
-            className="btn btn-primary"
+            className="btn btn-primary bg-yellow-400 text-black border-none hover:bg-yellow-300"
           >
             Enviar Email
           </a>

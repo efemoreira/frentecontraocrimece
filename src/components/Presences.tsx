@@ -117,7 +117,7 @@ export default function Presences() {
   // }, []);
 
   return (
-    <section id="presencas" className="section bg-gradient-to-b from-gray-50 to-white relative">
+    <section id="presencas" className="section bg-gradient-to-b from-yellow-50 to-white relative">
       {/* Banner de destaque superior */}
       {/* <div className="absolute top-0 left-0 w-full bg-secondary text-white text-center py-2 px-4 z-20">
         <p className="text-sm md:text-base font-medium">
@@ -134,11 +134,11 @@ export default function Presences() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <div className="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-medium mb-4">
+          <div className="inline-block bg-yellow-100 text-yellow-700 px-4 py-1 rounded-full text-sm font-medium mb-4">
             PERSONALIDADES CONFIRMADAS
           </div>
-          <h2 className="section-title text-primary">Quem Estará Presente</h2>
-          <p className="section-subtitle max-w-2xl mx-auto">
+          <h2 className="section-title text-yellow-700">Quem Estará Presente</h2>
+          <p className="section-subtitle max-w-2xl mx-auto text-yellow-900">
             Tenha a oportunidade única de interagir com estas autoridades e especialistas
             que confirmaram presença em nossa audiência pública no dia 08 de agosto.
           </p>
@@ -258,19 +258,19 @@ function PersonCard({ person }: { person: typeof people[0] }) {
       whileHover={{ y: -5 }}
     >
       <div className="absolute top-4 right-4 z-10">
-        <span className="bg-secondary text-white text-xs py-1 px-2 rounded-full font-medium">
+        <span className="bg-yellow-400 text-black text-xs py-1 px-2 rounded-full font-medium">
           Confirmado
         </span>
       </div>
       <div className="relative h-64 w-full">
-        <div className="absolute inset-0 bg-gray-300" />
+        <div className="absolute inset-0 bg-yellow-100" />
         {/* Aqui deve entrar uma imagem real - iremos usar um placeholder por enquanto */}
         {/* <Image src={person.image} alt={person.name} fill className="object-cover" /> */}
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-bold text-primary mb-1">{person.name}</h3>
-        <p className="text-secondary font-medium mb-3">{person.title}</p>
-        <p className="text-gray-600 mb-4">{person.description}</p>        
+        <h3 className="text-xl font-bold text-yellow-700 mb-1">{person.name}</h3>
+        <p className="text-yellow-600 font-medium mb-3">{person.title}</p>
+        <p className="text-yellow-900 mb-4">{person.description}</p>        
       </div>
     </motion.div>
   );
