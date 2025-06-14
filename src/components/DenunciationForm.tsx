@@ -27,7 +27,7 @@ export default function DenunciationForm() {
       };
       
       // Endpoint do Google Script para processar denúncias (anonimamente)
-      await fetch('https://script.google.com/macros/s/AKfycbwovsvEWGgM8GY8GOnCOsABl5MJxGxa21Zml1v6zCYs9oMSf7gioKBB8GebqtKVYEIS/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbyqtaRt2K_cn2c_UUn8BrxTAfGWKs7Tc7UekY1i1RtnD_MUCVUNum-IFRZ7EUELiNs_/exec', {
         redirect: "follow",
         method: 'POST',
         mode: 'no-cors', // Usar no-cors para evitar CORS issues
