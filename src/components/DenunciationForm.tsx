@@ -18,7 +18,7 @@ export default function DenunciationForm() {
     setIsSubmitting(true);
     
     try {
-      const formData = {
+      const payload = {
         descricao: form.descricao,
         local: form.local,
         contato: form.anonima ? 'Anônima' : form.contato,
@@ -27,14 +27,14 @@ export default function DenunciationForm() {
       };
       
       // Endpoint do Google Script para processar denúncias (anonimamente)
-      await fetch('https://script.google.com/macros/s/AKfycbygHXFIdDc9GbOPPfvKAbG_EhT7jmq7fNt4x80xBSNNyc3rT_pyn3rxbwV7ntwCKlYS/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbwovsvEWGgM8GY8GOnCOsABl5MJxGxa21Zml1v6zCYs9oMSf7gioKBB8GebqtKVYEIS/exec', {
         redirect: "follow",
         method: 'POST',
         mode: 'no-cors', // Usar no-cors para evitar CORS issues
         headers: {
           'Content-Type': 'text/plain;charset=utf-8',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
       
       // Como estamos usando no-cors, não podemos verificar o status da resposta normalmente
