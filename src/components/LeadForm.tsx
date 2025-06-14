@@ -102,7 +102,7 @@ export default function LeadForm({ hideTitle, altTitle, altSubtitle }: LeadFormP
       };
       
       // Endpoint do Google Script para processar o formulário
-      await fetch('https://script.google.com/macros/s/AKfycbxsew_ZKU5aSg2jsLWpOCXAW18WTiox_s0td2Y-tk3FKyxqQgdlmDVSFNgzmlu0I-ao/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbyo8-Im4wqs7_JCIYpx_7xIelPNsuYQfNTYYLsbYj5vYlVJMhxvqZL9LGzPj5Uq1QNl/exec', {
         redirect: "follow",
         method: 'POST',
         mode: 'no-cors', // Adicionado para evitar problemas de CORS
