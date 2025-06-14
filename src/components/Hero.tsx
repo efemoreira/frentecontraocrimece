@@ -25,8 +25,8 @@ const slideImages = [
 
 export default function Hero() {
   const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const y = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+  // Removemos a transformação Y que estava causando problemas
   
   // Estado para popup
   // const [showPopup, setShowPopup] = useState(false);
@@ -74,7 +74,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="evento" className="relative h-screen min-h-[800px] sm:min-h-[850px] flex items-center justify-center overflow-hidden pt-20 md:pt-24 pb-20 md:pb-24">
+    <section id="evento" className="relative h-auto min-h-screen md:h-screen flex items-center justify-center overflow-y-auto overflow-x-hidden pt-20 pb-16 md:pt-16 md:pb-24">
       {/* Background Slider */}
       <div className="absolute inset-0 z-0">
         <Swiper
@@ -104,16 +104,16 @@ export default function Hero() {
       </div>
       
       {/* Content */}
-      <div className="container relative z-10 pt-16 md:pt-24 text-center">
+      <div className="container relative z-10 pt-8 sm:pt-12 md:pt-16 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          style={{ opacity, y }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          style={{ opacity }}
           className="text-white max-w-4xl mx-auto px-4"
         >
           <motion.div
-            className="inline-block bg-secondary text-white px-4 py-2 rounded-full mb-6 shadow-lg"
+            className="inline-block bg-secondary text-white px-3 py-1 md:px-4 md:py-2 rounded-full mb-4 md:mb-6 shadow-lg text-xs md:text-base"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3 }}
@@ -122,7 +122,7 @@ export default function Hero() {
           </motion.div>
           
           <motion.h1
-            className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
@@ -131,9 +131,9 @@ export default function Hero() {
             <span className="text-secondary">Frente Contra o Crime</span> no Ceará
           </motion.h1>
           
-          <motion.div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg max-w-3xl mx-auto mb-8 border border-white/20">
+          <motion.div className="bg-white/10 backdrop-blur-sm p-3 md:p-4 rounded-lg max-w-3xl mx-auto mb-4 md:mb-8 border border-white/20">
             <motion.p
-              className="text-lg md:text-xl text-gray-100 max-w-2xl mx-auto"
+              className="text-sm sm:text-base md:text-xl text-gray-100 max-w-2xl mx-auto"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
@@ -142,18 +142,18 @@ export default function Hero() {
               civil e autoridades nesta importante audiência.
             </motion.p>
             
-            <div className="mt-4 text-gray-200 flex flex-wrap justify-center gap-x-8 gap-y-2">
+            <div className="mt-3 md:mt-4 text-gray-200 flex flex-wrap justify-center gap-x-4 md:gap-x-8 gap-y-2">
               <div className="flex items-center">
-                <svg className="w-5 h-5 mr-2 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-secondary" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                 </svg>
-                <span>10h da manhã</span>
+                <span className="text-xs sm:text-sm md:text-base">10h da manhã</span>
               </div>
               <div className="flex items-center">
-                <svg className="w-5 h-5 mr-2 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-secondary" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
-                <span>Assembleia Legislativa do Ceará</span>
+                <span className="text-xs sm:text-sm md:text-base">Assembleia Legislativa do Ceará</span>
               </div>
               {/* <div className="flex items-center">
                 <svg className="w-5 h-5 mr-2 text-secondary" fill="currentColor" viewBox="0 0 20 20">
@@ -166,7 +166,7 @@ export default function Hero() {
           
           {/* Contador regressivo */}
           <motion.div 
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8 max-w-2xl mx-auto"
+            className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 my-4 sm:my-6 md:my-8 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.8 }}
@@ -177,22 +177,22 @@ export default function Hero() {
               { label: "MINUTOS", value: timeLeft.minutes },
               { label: "SEGUNDOS", value: timeLeft.seconds }
             ].map((item, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
-                <div className="text-3xl md:text-4xl font-bold text-white">{item.value}</div>
-                <div className="text-gray-300 text-sm">{item.label}</div>
+              <div key={index} className="bg-white/10 backdrop-blur-sm p-2 sm:p-3 md:p-4 rounded-lg">
+                <div className="text-xl sm:text-2xl md:text-4xl font-bold text-white">{item.value}</div>
+                <div className="text-gray-300 text-xs sm:text-sm">{item.label}</div>
               </div>
             ))}
           </motion.div>
           
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.1 }}
           >
             <motion.a 
               href="#inscricao" 
-              className="btn btn-secondary text-lg font-bold py-4 px-8 shadow-lg relative overflow-hidden group"
+              className="btn btn-secondary text-sm sm:text-base md:text-lg font-bold py-3 md:py-4 px-4 md:px-8 shadow-lg relative overflow-hidden group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -201,7 +201,7 @@ export default function Hero() {
             </motion.a>
             <motion.a 
               href="#presencas" 
-              className="btn border-2 border-white text-white hover:bg-white/10 py-4 px-6"
+              className="btn border-2 border-white text-white hover:bg-white/10 py-2 sm:py-3 md:py-4 px-4 md:px-6 text-sm sm:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -211,14 +211,14 @@ export default function Hero() {
           
           {/* Elemento de social proof */}
           <motion.div 
-            className="mt-10 mb-8 flex items-center justify-center text-white/80 text-sm"
+            className="mt-4 sm:mt-6 md:mt-10 mb-4 md:mb-8 flex items-center justify-center text-white/80 text-xs sm:text-sm"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3 }}
           >
-            <div className="flex -space-x-2 mr-3">
+            <div className="flex -space-x-1 sm:-space-x-2 mr-2 sm:mr-3">
               {[1, 2, 3, 4].map((i) => (
-                <div key={i} className={`w-8 h-8 rounded-full border-2 border-primary bg-gray-300`}></div>
+                <div key={i} className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full border-2 border-primary bg-gray-300`}></div>
               ))}
             </div>
             <span>+120 pessoas já confirmaram presença</span>
@@ -228,7 +228,7 @@ export default function Hero() {
       
       {/* Scroll indicator */}
       <motion.div 
-        className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-6 md:bottom-12 left-1/2 transform -translate-x-1/2"
         animate={{ 
           y: [0, 10, 0],
         }}
