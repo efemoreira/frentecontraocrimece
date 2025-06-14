@@ -19,7 +19,7 @@ export default function DenunciationForm() {
     
     try {
       // Endpoint do Google Script para processar denúncias (anonimamente)
-      const response = await fetch('https://script.google.com/macros/s/SEU_ENDPOINT_DO_GOOGLE_SCRIPT_DENUNCIA/exec', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbx2w1PI7v4ZXn8d-hdYqAvE8UpbJGtgZdPC01q9_PQJbAWxD0IACNfIABmU9GJM--1T/exec', {
         method: 'POST',
         body: JSON.stringify({
           descricao: form.descricao,

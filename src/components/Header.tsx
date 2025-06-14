@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,17 +29,18 @@ export default function Header() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          {/* Logo placeholder - replace with your actual logo */}
-          {/* click no logo vai para cima */}
+          {/* Logo */}
           <a href="#" className="flex items-center group">
-            <div className="mr-2 relative w-10 h-10">
-              <div className="absolute inset-0 rounded-full bg-white text-[#0E3B6E] flex items-center justify-center font-bold text-lg group-hover:bg-gray-200 transition-colors">
-              FC
-              </div>
+            <div className="mr-3 relative ">
+              <Image 
+                src="/images/logo.png" 
+                alt="Frente Contra o Crime CE Logo" 
+                width={250}
+                height={150}
+                className="object-contain"
+                priority
+              />
             </div>
-            <h1 className="text-xl md:text-2xl font-bold text-white group-hover:text-secondary transition-colors">
-              Frente Contra o Crime CE
-            </h1>
           </a>
         </motion.div>
         
