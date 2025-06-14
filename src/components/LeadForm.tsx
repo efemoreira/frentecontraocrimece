@@ -105,11 +105,10 @@ export default function LeadForm({ hideTitle, altTitle, altSubtitle }: LeadFormP
       await fetch('https://script.google.com/macros/s/AKfycbybKfYx3DierH0K7uK-lWHVKF1q4nwrjdmnytKq15q8xVhS6k9EJ-GAp1stdbLyJyDk/exec', {
         redirect: "follow",
         method: 'POST',
-        mode: 'no-cors', // Adicionado para evitar problemas de CORS
-        body: JSON.stringify(formData),
         headers: {
           'Content-Type': 'text/plain;charset=utf-8',
         },
+        body: JSON.stringify(formData),
       });
       
       // Como estamos usando no-cors, não podemos verificar o status da resposta normalmente
