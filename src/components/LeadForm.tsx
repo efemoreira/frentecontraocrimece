@@ -105,6 +105,7 @@ export default function LeadForm({ hideTitle, altTitle, altSubtitle }: LeadFormP
       await fetch('https://script.google.com/macros/s/AKfycbyTpZ_vYIfq4yafujqIpVSP3Qu7YDXQM5XbnhqSJXZb1mweSaZLn6VcLn68EbYEBKj7/exec', {
         redirect: "follow",
         method: 'POST',
+        mode: 'no-cors', // Usar no-cors para evitar CORS issues
         headers: {
           'Content-Type': 'text/plain;charset=utf-8',
         },
