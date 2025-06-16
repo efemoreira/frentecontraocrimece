@@ -160,9 +160,9 @@ export default function LeadForm({ hideTitle, altTitle, altSubtitle }: LeadFormP
             className="text-center text-black mb-12"
           >
             <span className="bg-yellow-400 text-black text-sm font-medium px-3 py-1 rounded-full mb-4 inline-block">INSCRIÇÕES ABERTAS</span>
-            <h2 className="text-3xl md:text-4xl font-bold">{altTitle || "Garanta sua vaga na audiência pública"}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">{altTitle || "Garanta sua vaga na Frente Contra o Crime"}</h2>
             <p className="text-yellow-900 max-w-2xl mx-auto mt-4">
-              {altSubtitle || "Preencha o formulário abaixo para participar deste evento que será um marco no combate ao crime no Ceará."}
+              {altSubtitle || "Esteja ao lado das maiores autoridades e personalidades do Brasil e do Estado na luta contra o crime organizado. Inscreva-se agora e faça parte dessa mobilização histórica!"}
             </p>
           </motion.div>
         )}
@@ -418,7 +418,7 @@ function PorQueParticiparContent() {
           </motion.li>
         ))}
       </ul>
-      <div className="bg-yellow-50 p-4 rounded-lg backdrop-blur-sm border border-yellow-200 mt-8">
+      {/* <div className="bg-yellow-50 p-4 rounded-lg backdrop-blur-sm border border-yellow-200 mt-8">
         <p className="italic text-yellow-900">
           &ldquo;Este evento é uma oportunidade única para a sociedade civil se manifestar e contribuir para políticas de segurança mais eficazes.&rdquo;
         </p>
@@ -429,7 +429,7 @@ function PorQueParticiparContent() {
             <p className="text-yellow-700 text-sm">Especialista em Segurança Pública</p>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

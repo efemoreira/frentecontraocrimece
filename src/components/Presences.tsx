@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
@@ -9,40 +10,34 @@ import 'swiper/css/pagination';
 // Dados das personalidades confirmadas
 const people = [
   { 
-    name: 'Deputado João Silva', 
-    title: 'Assembleia Legislativa do Ceará', 
-    image: '/images/person-1.jpg',
-    description: 'Presidente da Comissão de Segurança Pública'
-  },
-  { 
-    name: 'Dra. Maria Oliveira', 
-    title: 'Ordem dos Advogados do Brasil - CE', 
+    name: 'Ver.ª Amanda Vettorazzo ', 
+    title: 'Vereadora da cidade de São Paulo', 
     image: '/images/person-2.jpg',
-    description: 'Coordenadora da Comissão de Direitos Humanos'
+    description: 'Criadora da Lei Anti Oruam'
   },
   { 
-    name: 'Prof. Carlos Rodrigues', 
-    title: 'Universidade Federal do Ceará', 
+    name: 'Arthur do Val', 
+    title: 'Ex-Deputado Estadual de SP', 
+    image: '/images/person-1.jpg',
+    description: 'Liderança política do Movimento Brasil Livre'
+  },
+  { 
+    name: 'Dep. Reginauro', 
+    title: 'Deputado estadual do CE', 
     image: '/images/person-3.jpg',
-    description: 'Especialista em Segurança Pública e Políticas Sociais'
+    description: 'Lider de segurança'
   },
   { 
-    name: 'Coronel André Fernandes', 
-    title: 'Polícia Militar do Ceará', 
+    name: 'Capitão Wagner', 
+    title: 'Ex-Deputado Federal pelo CE', 
     image: '/images/person-4.jpg',
-    description: 'Ex-comandante do Batalhão de Operações Especiais'
+    description: 'Maior liderança de segurança pública do Ceará'
   },
   { 
-    name: 'Daniela Campos', 
-    title: 'Associação das Vítimas da Violência', 
+    name: 'Pedro Arthur', 
+    title: 'Portavoz do Movimento Brasil Livre', 
     image: '/images/person-5.jpg',
-    description: 'Fundadora e porta-voz do movimento'
-  },
-  { 
-    name: 'Roberto Mendes', 
-    title: 'Ministério Público do Ceará', 
-    image: '/images/person-6.jpg',
-    description: 'Promotor de Justiça especializado em crime organizado'
+    description: 'Gente boa'
   },
 ];
 
@@ -139,8 +134,8 @@ export default function Presences() {
           </div>
           <h2 className="section-title text-yellow-700">Quem Estará Presente</h2>
           <p className="section-subtitle max-w-2xl mx-auto text-yellow-900">
-            Tenha a oportunidade única de interagir com estas autoridades e especialistas
-            que confirmaram presença em nossa audiência pública no dia 08 de agosto.
+            Tenha a oportunidade única de interagir com autoridades e especialistas que já
+            confirmaram presença no dia 08 de agosto.
           </p>
           
           {/* Contador de vagas e tempo */}
@@ -265,7 +260,8 @@ function PersonCard({ person }: { person: typeof people[0] }) {
       <div className="relative h-64 w-full">
         <div className="absolute inset-0 bg-yellow-100" />
         {/* Aqui deve entrar uma imagem real - iremos usar um placeholder por enquanto */}
-        {/* <Image src={person.image} alt={person.name} fill className="object-cover" /> */}
+        <Image src={person.image} alt={person.name} fill className="object-cover" />
+
       </div>
       <div className="p-6">
         <h3 className="text-xl font-bold text-yellow-700 mb-1">{person.name}</h3>

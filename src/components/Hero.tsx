@@ -13,14 +13,6 @@ const slideImages = [
     src: '/images/hero-1.jpg',
     alt: 'Audiência Pública na ALECE'
   },
-  {
-    src: '/images/hero-2.jpg',
-    alt: 'Mobilização cidadã pela segurança'
-  },
-  {
-    src: '/images/hero-3.jpg',
-    alt: 'Evento Frente Contra o Crime'
-  }
 ];
 
 export default function Hero() {
@@ -95,8 +87,8 @@ export default function Hero() {
             <SwiperSlide key={index} className="h-full w-full">
               <div className="relative h-full w-full">
                 {/* Imagem de fundo escurecida para contraste */}
-                <div className="absolute inset-0 bg-yellow-100"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-yellow-400/80 to-transparent"></div>
+                <div className="absolute inset-0 bg-[#ffdf4d]"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-#f1b921/60 via-[#f1b921] to-transparent"></div>
               </div>
             </SwiperSlide>
           ))}
@@ -113,7 +105,7 @@ export default function Hero() {
           className="text-black max-w-4xl mx-auto px-4"
         >
           <motion.div
-            className="inline-block bg-yellow-400 text-black px-3 py-1 md:px-4 md:py-2 rounded-full mb-4 md:mb-6 shadow-lg text-xs md:text-base font-bold"
+            className="inline-block bg-[#f1b921] text-black px-3 py-1 md:px-4 md:py-2 rounded-full mb-4 md:mb-6 shadow-lg text-xs md:text-base font-bold"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3 }}
@@ -127,8 +119,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            Audiência Pública<br />
-            <span className="text-yellow-500">Frente Contra o Crime</span> no Ceará
+            Lançamento da<br />
+            <span className="text-[#f15121]">Frente Contra o Crime</span> no Ceará
           </motion.h1>
           
           <motion.div className="bg-yellow-50/80 backdrop-blur-sm p-3 md:p-4 rounded-lg max-w-3xl mx-auto mb-4 md:mb-8 border border-yellow-200">
@@ -139,12 +131,12 @@ export default function Hero() {
               transition={{ delay: 0.7 }}
             >
               Uma mobilização cidadã pela segurança no nosso estado. Junte-se a líderes, representantes da sociedade 
-              civil e autoridades nesta importante audiência.
+              civil e autoridades neste importante evento.
             </motion.p>
             
-            <div className="mt-3 md:mt-4 text-yellow-800 flex flex-wrap justify-center gap-x-4 md:gap-x-8 gap-y-2">
+            <div className="mt-3 md:mt-4 text-[#b8860b] flex flex-wrap justify-center gap-x-4 md:gap-x-8 gap-y-2">
               <div className="flex items-center">
-                <svg className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-[#b8860b]" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                 </svg>
                 <span className="text-xs sm:text-sm md:text-base">10h da manhã</span>
@@ -186,7 +178,7 @@ export default function Hero() {
           >
             <motion.a 
               href="#inscricao" 
-              className="btn btn-secondary text-sm sm:text-base md:text-lg font-bold py-3 md:py-4 px-4 md:px-8 shadow-lg relative overflow-hidden group bg-yellow-400 text-black border-none hover:bg-yellow-300"
+              className="btn btn-secondary text-sm sm:text-base md:text-lg font-bold py-3 md:py-4 px-4 md:px-8 shadow-lg relative overflow-hidden group bg-[#f1b921] text-black border-none hover:bg-[#b8860b]"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -199,12 +191,12 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Ver Especialistas Confirmados
+              Presenças Confirmadas
             </motion.a>
           </motion.div>
           
           {/* Elemento de social proof */}
-          <motion.div 
+          {/* <motion.div 
             className="mt-4 sm:mt-6 md:mt-10 mb-4 md:mb-8 flex items-center justify-center text-yellow-900/80 text-xs sm:text-sm"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -215,8 +207,8 @@ export default function Hero() {
                 <div key={i} className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full border-2 border-yellow-400 bg-yellow-100`}></div>
               ))}
             </div>
-            <span>+120 pessoas já confirmaram presença</span>
-          </motion.div>
+            <span>+30 pessoas já confirmaram presença</span>
+          </motion.div> */}
         </motion.div>
       </div>
       
