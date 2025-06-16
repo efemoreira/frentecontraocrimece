@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Modal from './Modal';
 
 interface FormState {
   nome: string;
@@ -36,6 +37,7 @@ export default function LeadForm({ hideTitle, altTitle, altSubtitle }: LeadFormP
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [formMessage, setFormMessage] = useState('');
+  const [showPrivacy, setShowPrivacy] = useState(false);
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -137,6 +139,25 @@ export default function LeadForm({ hideTitle, altTitle, altSubtitle }: LeadFormP
 
   return (
     <section id="inscricao" className="section relative overflow-hidden bg-white">
+      {/* Modal de Política de Privacidade */}
+      <Modal isOpen={showPrivacy} onClose={() => setShowPrivacy(false)} title="Política de Privacidade">
+        <div className="space-y-4 text-justify">
+          <p>
+            Esta Política de Privacidade está em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018) e tem como objetivo esclarecer como coletamos, utilizamos, armazenamos e protegemos seus dados pessoais.
+          </p>
+          <ul className="list-disc pl-5 space-y-2">
+            <li><b>Coleta de Dados:</b> Coletamos apenas os dados necessários para sua inscrição no evento, como nome, e-mail, WhatsApp e cidade.</li>
+            <li><b>Uso dos Dados:</b> Os dados serão utilizados exclusivamente para comunicação sobre o evento, envio de informações e materiais relacionados.</li>
+            <li><b>Compartilhamento:</b> Não compartilhamos seus dados com terceiros, exceto quando exigido por lei ou para viabilizar a realização do evento.</li>
+            <li><b>Armazenamento:</b> Seus dados são armazenados de forma segura e pelo tempo necessário para as finalidades descritas.</li>
+            <li><b>Seus Direitos:</b> Você pode solicitar a qualquer momento acesso, correção ou exclusão dos seus dados, conforme previsto na LGPD.</li>
+            <li><b>Contato:</b> Para dúvidas ou solicitações relacionadas à privacidade, entre em contato pelo e-mail informado no site.</li>
+          </ul>
+          <p>
+            Ao se inscrever, você concorda com esta política e autoriza o uso dos seus dados conforme descrito acima.
+          </p>
+        </div>
+      </Modal>
       {/* Banner destacado no topo da seção */}
       <div className="absolute top-0 left-0 w-full bg-yellow-400 text-black text-center py-2 px-4 z-20 font-bold">
         <p className="text-sm md:text-base font-medium">
@@ -315,7 +336,7 @@ export default function LeadForm({ hideTitle, altTitle, altSubtitle }: LeadFormP
                         />
                         <span className="text-sm">
                           Concordo em receber informações sobre o evento e declaro estar ciente da 
-                          <a href="#" className="text-yellow-700 hover:underline"> política de privacidade</a>.
+                          <a href="#" className="text-yellow-700 hover:underline" onClick={e => { e.preventDefault(); setShowPrivacy(true); }}> política de privacidade</a>.
                         </span>
                       </label>
                       {errors.termos && <p className="mt-1 text-red-500 text-sm">{errors.termos}</p>}

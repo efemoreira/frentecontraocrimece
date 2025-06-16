@@ -37,7 +37,7 @@ const people = [
     name: 'Pedro Arthur', 
     title: 'Portavoz do Movimento Brasil Livre', 
     image: '/images/person-5.jpg',
-    description: 'Gente boa'
+    description: 'Candidato a vereador em 2024'
   },
 ];
 
