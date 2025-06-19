@@ -135,12 +135,12 @@ export default function Hero() {
             </motion.p>
             
             <div className="mt-3 md:mt-4 text-[#b8860b] flex flex-wrap justify-center gap-x-4 md:gap-x-8 gap-y-2">
-              <div className="flex items-center">
+              {/* <div className="flex items-center">
                 <svg className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-[#b8860b]" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                 </svg>
-                <span className="text-xs sm:text-sm md:text-base">10h da manhã</span>
-              </div>
+                <span className="text-xs sm:text-sm md:text-base"></span>
+              </div> */}
               <div className="flex items-center">
                 <svg className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />

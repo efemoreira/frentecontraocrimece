@@ -17,7 +17,7 @@ const tabs = [
 	{
 		id: 'programacao',
 		label: 'Programação',
-		content: 'A audiência acontecerá no dia 08 de agosto de 2025, das 10h às 17h, incluindo painéis de debate, apresentações de especialistas e sessão aberta para perguntas e propostas. A programação completa será divulgada nas próximas semanas.',
+		content: 'A audiência acontecerá no dia 08 de agosto de 2025, incluindo painéis de debate, apresentações de especialistas e sessão aberta para perguntas e propostas. A programação completa será divulgada nas próximas semanas.',
 	},
 	{
 		id: 'organizacao',
@@ -120,7 +120,7 @@ export default function About() {
 											Data e Hora:
 										</span>
 										<span className="font-medium text-black">
-											08 de Agosto de 2025, 10h às 17h
+											08 de Agosto de 2025
 										</span>
 									</div>
 
