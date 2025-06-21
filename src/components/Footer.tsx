@@ -84,7 +84,7 @@ export default function Footer() {
             <h4 className="text-xl font-bold mb-4 text-yellow-600">Evento</h4>
             <div className="bg-yellow-50 p-4 rounded-lg">
               <p className="text-lg font-bold text-yellow-700">08 de Agosto de 2025</p>
-              <p className="text-yellow-800 mb-2">10:00 - 17:00</p>
+              <p className="text-yellow-800 mb-2">18:00</p>
               <p className="mb-3 text-black">Audiência Pública na ALECE</p>
               <a href="#inscricao" className="btn btn-secondary text-sm py-2 px-4 bg-yellow-400 text-black border-none hover:bg-yellow-300">
                 Garantir Presença
