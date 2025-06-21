@@ -417,7 +417,7 @@ function PorQueParticiparContent() {
       <ul className="space-y-4 mb-8">
         {[
           'Audiência pública na Assembleia Legislativa do Ceará',
-          'Dia 08 de agosto de 2025',
+          'Dia 08 de agosto de 2025 às 18h',
           'Participação de autoridades e especialistas em segurança',
           'Receba material exclusivo sobre segurança pública',
           'Faça parte da rede de cidadãos engajados'
