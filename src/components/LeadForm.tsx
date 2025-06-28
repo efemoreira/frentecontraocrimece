@@ -94,14 +94,13 @@ export default function LeadForm({ hideTitle, altTitle, altSubtitle }: LeadFormP
     setSubmitStatus('idle');
     
     try {
-      // Envie apenas os numero do whatsapp
+      // Envie apenas os numero do whatsapp retire espaços caracteres especiais 
       const formattedWhatsapp = form.whatsapp.replace(/\D/g, '');
-      setForm({ ...form, whatsapp: formattedWhatsapp });
 
       const payload = {
         nome: form.nome,
         email: form.email,
-        whatsapp: form.whatsapp,
+        whatsapp: formattedWhatsapp,
         cidade: form.cidade,
         dataInscricao: new Date().toISOString(),
         origem: 'site_lancamento'
