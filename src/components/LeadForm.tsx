@@ -94,6 +94,10 @@ export default function LeadForm({ hideTitle, altTitle, altSubtitle }: LeadFormP
     setSubmitStatus('idle');
     
     try {
+      // Envie apenas os numero do whatsapp
+      const formattedWhatsapp = form.whatsapp.replace(/\D/g, '');
+      setForm({ ...form, whatsapp: formattedWhatsapp });
+
       const payload = {
         nome: form.nome,
         email: form.email,
