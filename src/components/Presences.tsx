@@ -23,7 +23,7 @@ const people = [
   },
   { 
     name: 'Dep. Kim Kataguiri', 
-    title: 'Deputado Federal de SP', 
+    title: 'Deputado Federal por SP', 
     image: '/images/kim.jpg',
     description: 'Liderança política do Movimento Brasil Livre'
   },
@@ -35,7 +35,7 @@ const people = [
   },
   { 
     name: 'Dep. Reginauro', 
-    title: 'Deputado estadual do CE', 
+    title: 'Deputado Estadual do CE', 
     image: '/images/person-3.jpg',
     description: 'Lider de segurança'
   },
