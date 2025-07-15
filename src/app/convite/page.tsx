@@ -60,7 +60,7 @@ export default function ConvitePage() {
                       Data:
                     </span>
                     <span className="text-black text-lg">
-                      Quinta-feira, 08 de agosto de 2025
+                      Sexta-feira, 08 de agosto de 2025
                     </span>
                   </div>
                 </div>
