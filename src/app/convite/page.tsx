@@ -133,13 +133,13 @@ export default function ConvitePage() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <span className="text-yellow-600 text-lg">🚫</span>
+                  <span className="text-yellow-600 text-lg">🅿️</span>
                   <div>
                     <span className="block text-yellow-700 font-medium">
                       Estacionamento:
                     </span>
                     <span className="text-black">
-                      Não há estacionamento disponível no local
+                      Há estacionamento disponível nas proximidades do local
                     </span>
                   </div>
                 </div>
