@@ -2,14 +2,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
 
 export default function ConvitePage() {
   return (
     <>
-      <Header />
       <main className="relative overflow-hidden py-20 md:py-32 bg-white min-h-screen">
       {/* Background Fixo */}
       <div className="absolute inset-0 w-full h-full z-0">
@@ -40,23 +36,6 @@ export default function ConvitePage() {
             <p className="text-lg sm:text-xl md:text-2xl text-yellow-700 max-w-3xl mx-auto px-4">
               Guarde estas informações importantes para o dia do evento
             </p>
-          </motion.div>
-
-          {/* Botão Voltar */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="mb-6"
-          >
-            <Link 
-              href="/" 
-              className="inline-flex items-center gap-2 text-yellow-700 hover:text-yellow-600 transition-colors"
-            >
-              <span className="text-lg">←</span>
-              <span className="font-medium">Voltar à página inicial</span>
-            </Link>
           </motion.div>
 
           <div className="max-w-4xl mx-auto space-y-6">
@@ -253,26 +232,10 @@ export default function ConvitePage() {
                 Aguardamos você no dia 08 de agosto! Juntos somos mais fortes na luta contra o crime.
               </p>
 
-              {/* Informações de contato para dúvidas */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                viewport={{ once: true }}
-                className="mt-8 p-4 bg-gray-50 rounded-lg"
-              >
-                <h4 className="text-lg font-semibold text-yellow-700 mb-2">
-                  Dúvidas sobre o evento?
-                </h4>
-                <p className="text-gray-600 text-sm">
-                  Entre em contato conosco através dos canais disponíveis na página principal.
-                </p>
-              </motion.div>
             </motion.div>
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }
