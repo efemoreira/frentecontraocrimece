@@ -22,6 +22,18 @@ const people = [
     description: 'Liderança política do Movimento Brasil Livre'
   },
   { 
+    name: 'Dep. Kim Kataguiri', 
+    title: 'Deputado Federal de SP', 
+    image: '/images/kim.jpg',
+    description: 'Liderança política do Movimento Brasil Livre'
+  },
+  { 
+    name: 'Dep. Guto Zacarias', 
+    title: 'Deputado Estadual de SP', 
+    image: '/images/guto.jpg',
+    description: 'Liderança política do Movimento Brasil Livre'
+  },
+  { 
     name: 'Dep. Reginauro', 
     title: 'Deputado estadual do CE', 
     image: '/images/person-3.jpg',
@@ -32,6 +44,12 @@ const people = [
     title: 'Ex-Deputado Federal pelo CE', 
     image: '/images/person-4.jpg',
     description: 'Maior liderança de segurança pública do Ceará'
+  },
+  { 
+    name: 'Renato Batista', 
+    title: 'Portavoz do Movimento Brasil Livre', 
+    image: '/images/renato.jpg',
+    description: 'Candidato a vereador em 2024'
   },
   { 
     name: 'Pedro Arthur', 
