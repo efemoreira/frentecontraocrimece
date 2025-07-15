@@ -6,12 +6,6 @@ import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
-// Metadados da página
-export const metadata = {
-  title: 'Convite - Audiência Pública Frente Contra o Crime CE',
-  description: 'Confirmação de presença para a Audiência Pública Frente Contra o Crime CE - 08 de agosto de 2025, Assembleia Legislativa do Ceará',
-};
-
 export default function ConvitePage() {
   return (
     <>
