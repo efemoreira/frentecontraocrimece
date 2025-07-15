@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
@@ -55,13 +56,13 @@ export default function ConvitePage() {
             viewport={{ once: true }}
             className="mb-6"
           >
-            <a 
+            <Link 
               href="/" 
               className="inline-flex items-center gap-2 text-yellow-700 hover:text-yellow-600 transition-colors"
             >
               <span className="text-lg">←</span>
               <span className="font-medium">Voltar à página inicial</span>
-            </a>
+            </Link>
           </motion.div>
 
           <div className="max-w-4xl mx-auto space-y-6">
