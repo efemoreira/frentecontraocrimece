@@ -52,7 +52,9 @@ export default function LeadForm({ hideTitle, altTitle, altSubtitle }: LeadFormP
       newErrors.email = 'Email inválido';
     }
     
-    if (form.whatsapp && !/^\(\d{2}\) \d{5}-\d{4}$/.test(form.whatsapp)) {
+    if (!form.whatsapp.trim()) {
+      newErrors.whatsapp = 'WhatsApp é obrigatório';
+    } else if (!/^\(\d{2}\) \d{5}-\d{4}$/.test(form.whatsapp)) {
       newErrors.whatsapp = 'Formato: (99) 99999-9999';
     }
     
@@ -303,7 +305,7 @@ export default function LeadForm({ hideTitle, altTitle, altSubtitle }: LeadFormP
                     
                     <div className="mb-4">
                       <label htmlFor="whatsapp" className="block text-yellow-800 font-medium mb-1">
-                        WhatsApp <span className="text-yellow-600 text-xs">(para lembretes sobre o evento)</span>
+                        WhatsApp * <span className="text-yellow-600 text-xs">(para lembretes sobre o evento)</span>
                       </label>
                       <input
                         id="whatsapp"
