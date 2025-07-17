@@ -11,51 +11,51 @@ import 'swiper/css/pagination';
 const people = [
   { 
     name: 'Ver.ª Amanda Vettorazzo ', 
-    title: 'Vereadora da cidade de São Paulo', 
+    title: 'Vereadora que criou a lei anti Oruam', 
     image: '/images/person-2.jpg',
-    description: 'Criadora da Lei Anti Oruam'
+    description: ''
   },
   { 
     name: 'Arthur do Val', 
-    title: 'Ex-Deputado Estadual de SP', 
+    title: 'Coordenador nacional MBL', 
     image: '/images/person-1.jpg',
-    description: 'Liderança política do Movimento Brasil Livre'
+    description: ''
   },
   { 
     name: 'Dep. Kim Kataguiri', 
-    title: 'Deputado Federal por SP', 
+    title: 'Deputado Federal', 
     image: '/images/kim.jpg',
-    description: 'Liderança política do Movimento Brasil Livre'
+    description: ''
   },
   { 
     name: 'Dep. Guto Zacarias', 
-    title: 'Deputado Estadual de SP', 
+    title: 'Deputado Estadual', 
     image: '/images/guto.jpg',
-    description: 'Liderança política do Movimento Brasil Livre'
+    description: ''
   },
   { 
     name: 'Dep. Reginauro', 
-    title: 'Deputado Estadual do CE', 
+    title: 'Deputado Estadual', 
     image: '/images/person-3.jpg',
-    description: 'Lider de segurança'
+    description: ''
   },
   { 
     name: 'Capitão Wagner', 
-    title: 'Ex-Deputado Federal pelo CE', 
+    title: 'Ex-Deputado Federal', 
     image: '/images/person-4.jpg',
-    description: 'Maior liderança de segurança pública do Ceará'
+    description: ''
   },
   { 
     name: 'Renato Batista', 
-    title: 'Portavoz do Movimento Brasil Livre', 
+    title: 'Coordenador nacional MBL', 
     image: '/images/renato.jpg',
-    description: 'Candidato a vereador em 2024'
+    description: ''
   },
   { 
     name: 'Pedro Arthur', 
-    title: 'Portavoz do Movimento Brasil Livre', 
+    title: 'Liderança do MBL no CE', 
     image: '/images/person-5.jpg',
-    description: 'Candidato a vereador em 2024'
+    description: ''
   },
 ];
 
