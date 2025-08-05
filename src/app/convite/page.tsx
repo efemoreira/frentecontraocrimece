@@ -89,6 +89,9 @@ export default function ConvitePage() {
                     <span className="text-gray-600 text-sm block mt-1">
                       Av. Desembargador Moreira, 2807 – Dionísio Torres, Fortaleza – CE
                     </span>
+                    <span className="text-red-600 text-sm font-semibold block mt-2">
+                      ⚠️ Importante: Entrada pela Rua Barbosa de Freitas
+                    </span>
                   </div>
                 </div>
               </div>
