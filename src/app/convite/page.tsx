@@ -130,7 +130,10 @@ export default function ConvitePage() {
                       Vestimenta obrigatória:
                     </span>
                     <span className="text-black">
-                      Calças compridas, camisas ou blusas com mangas e calçados fechados
+                      Calças compridas, camisas ou blusas com mangas
+                    </span>
+                    <span className="text-red-600 text-sm font-semibold block mt-1">
+                      ⚠️ Não é permitido Bermudas, Shorts ou Chinelos
                     </span>
                   </div>
                 </div>
@@ -143,6 +146,9 @@ export default function ConvitePage() {
                     </span>
                     <span className="text-black">
                       Há estacionamento disponível nas proximidades do local
+                    </span>
+                    <span className="text-gray-600 text-sm block mt-1">
+                      Estacionamento mais proximo na Rua Barbosa de Freitas, 2520 no valor de 15 reais
                     </span>
                   </div>
                 </div>
